@@ -1,0 +1,300 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbig {
+  font-size: larger;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+.footerinfo {
+  text-align: center;
+  display: flex;
+  height: 8rem;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 0rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+  margin-right: 0.5rem;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+/* Cards */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 0.8rem !important;
+
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* Cards Effects */
+.listing-link:hover {
+  text-decoration: underline black;
+}
+
+.card-img-overlay {
+  color: white;
+}
+.card-img-overlay i {
+  font-size: large;
+}
+.card-img-overlay:hover {
+  opacity: 0.15;
+  background-color: white;
+}
+
+.add-btn {
+  border: none;
+  background-color: #fe424d;
+}
+
+/* Edt page */
+.edit-btn {
+  border: none;
+  background-color: #fe424d;
+}
+
+/* Show Page Styling */
+.show-img {
+  height: 30vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.show-edit-btn {
+  background-color: #fe424d;
+  margin-right: 1rem;
+  color: white;
+}
+
+.show-delete-btn {
+  background-color: #222222;
+  margin-right: 1rem;
+  color: white;
+}
+
+.show-edit-btn:hover {
+  background-color: #222222;
+  color: white;
+}
+
+.show-delete-btn:hover {
+  background-color: #222222;
+  color: white;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border: solid black 1px;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter {
+  margin-right: 3rem;
+  text-align: center;
+  opacity: 0.7;
+  margin-top: 2rem;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+
+#filters a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 992px) {
+  #filters {
+    gap: 18px;
+    padding: 10px;
+  }
+
+  .filter {
+    min-width: 60px;
+  }
+
+  .filter p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  #filters {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+
+  .filter {
+    min-width: 55px;
+  }
+
+  .filter i {
+    font-size: 18px;
+  }
+  .form-check-label {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .filter p {
+    display: none;
+  }
+}
+
+.tax-info {
+  display: none;
+}
+
+.tax-toggle {
+  border: 1px solid rgb(88, 84, 84);
+  height: 3rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem 0 1rem;
+}
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  font-size: 1rem;
+  border: 1px solid rgb(112, 109, 109);
+}
+
+.btn-search {
+  background-color: #fe424d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+}
+.btn-search:hover {
+  background-color: #fe424d;
+  color: white;
+}
+.btn-search i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+@media (max-width: 500px) {
+  .navbar-collapse p {
+    display: flex;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  background: black;
+  color: white;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+  text-decoration: none;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.back-to-top:hover {
+  background: #333;
+  transform: translateY(-5px);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

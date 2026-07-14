@@ -1,0 +1,130 @@
+<%- layout("./layouts/boilerplate") %>
+<body>
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h3 style="margin: 20px 0 30px 0">Edit Details : <%=listelement._id%></h3>
+
+      <form
+        action="/listings/edit/<%=listelement._id%>?_method=PUT"
+        method="post"
+        novalidate
+        class="needs-validation"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            name="listing[title]"
+            placeholder="Enter catchy title"
+            class="form-control"
+            value="<%=listelement.title%>"
+            required
+          />
+          <div class="valid-feedback">Title is okay</div>
+          <div class="invalid-feedback">Title is Required</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            placeholder="Enter description"
+            class="form-control"
+            required
+          >
+          <%=listelement.description%></textarea
+          >
+          <div class="valid-feedback">Description is okay</div>
+          <div class="invalid-feedback">Description is Required</div>
+        </div>
+
+        <div class="mb-3">
+          <p>Previous Image Preview</p>
+          <img src="<%=editedimageURL%>" alt="" />
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Image Upload</label>
+          <input type="file" name="listing[image]" class="form-control" />
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="Price" class="form-label">Price</label>
+            <input
+              type="number"
+              name="listing[price]"
+              placeholder="Enter price"
+              value="<%=listelement.price%>"
+              class="form-control"
+              required
+              min="1"
+            />
+            <div class="valid-feedback">Price is okay</div>
+            <div class="invalid-feedback">Price Invalid</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+
+            <select
+              name="listing[country]"
+              id="country"
+              class="form-select"
+              required
+            >
+              <option value="India">India</option>
+              <option value="Japan">Japan</option>
+              <option value="USA">United States</option>
+            </select>
+
+            <div class="invalid-feedback">Country is Required</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="Location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            placeholder="Enter location"
+            value="<%=listelement.location%>"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Location is okay</div>
+          <div class="invalid-feedback">Location is Required</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="category" class="form-label">Category</label>
+
+          <select
+            name="listing[category]"
+            id="category"
+            class="form-select"
+            required
+          >
+            <option value="<%=listelement.category%>"><%=listelement.category%></option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Pools">Pools</option>
+            <option value="Scenic">Scenic</option>
+            <option value="Farms">Farms</option>
+            <option value="Arctic">Arctic</option>
+            <option value="Beach">Beach</option>
+            <option value="Camping">Camping</option>
+            <option value="Tropic">Tropic</option>
+          </select>
+
+          <div class="invalid-feedback">Category is Required</div>
+        </div>
+
+        <button class="btn btn-dark edit-btn mt-3">Edit Info</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>

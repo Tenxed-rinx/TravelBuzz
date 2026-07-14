@@ -1,0 +1,68 @@
+<%- layout("./layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2 style="margin: 20px 0 30px 0">Login into TravelBuzz</h2>
+    <form action="/user/login" method="post" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Username is okay</div>
+        <div class="invalid-feedback">Username is Required</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            required
+          />
+
+          <span
+            class="input-group-text"
+            onclick="togglePassword()"
+            style="cursor: pointer"
+          >
+            <i id="eyeIcon" class="fa fa-eye"></i>
+          </span>
+        </div>
+        <div class="invalid-feedback">Password is Required</div>
+      </div>
+
+      <button class="btn btn-success">Login</button>
+
+
+        <a href="/user/signup"class="btn btn-success" style="margin-left: 8px">
+          Sign Up
+        </a>
+    </form>
+  </div>
+</div>
+
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+    }
+  }
+</script>
