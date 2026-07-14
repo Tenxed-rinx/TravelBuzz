@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 const passport = require("passport");
-const { saveOriginalurl, validateUser } = require("../middleware.js"); //save the original url before
+const { saveOriginalurl, validateUser } = require("../authmiddleware.js"); //save the original url before
 const userController = require("../controllers/user.js");
 
 router
