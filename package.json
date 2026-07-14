@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "22.21.0"
+    "node": "22"
   },
   "name": "pracproject",
   "version": "1.0.0",
