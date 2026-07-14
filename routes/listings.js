@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
-const { isLoggedin } = require("../middleware.js");
-const { isOwner, validateListing } = require("../middleware.js");
+const { isLoggedin } = require("../authmiddleware.js");
+const { isOwner, validateListing } = require("../authmiddleware.js");
 const multer = require("multer");
 
 const storage = multer.memoryStorage();
